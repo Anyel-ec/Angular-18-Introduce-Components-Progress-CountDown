@@ -1,8 +1,10 @@
+# **Select Language:** 🌍
+- [Español (Spanish)](README-es.md)
+- [English](README.md)
 
+# Componentes de Temporizador y Barra de Progreso
 
-# Countdown and Progress Bar Components
-
-This repository contains two Angular standalone components: a countdown timer (`CountdownComponent`) and a progress bar (`ProgressBarComponent`). These components are integrated into the main application to provide a visual countdown timer with a corresponding progress bar.
+Este repositorio contiene dos componentes independientes de Angular: un temporizador de cuenta regresiva (`CountdownComponent`) y una barra de progreso (`ProgressBarComponent`). Estos componentes están integrados en la aplicación principal para proporcionar un temporizador visual de cuenta regresiva con una barra de progreso correspondiente.
 
 ## RESULTS
 ### Views
@@ -10,51 +12,48 @@ This repository contains two Angular standalone components: a countdown timer (`
 ![Alt text](docs/2.PNG) 
 ![Alt text](docs/3.PNG) 
 
-
-
-![Alt text](doc/document.PNG) 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Components](#components)
+## Tabla de Contenidos
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Componentes](#componentes)
   - [CountdownComponent](#countdowncomponent)
   - [ProgressBarComponent](#progressbarcomponent)
-- [Main Application](#main-application)
+- [Aplicación Principal](#aplicación-principal)
 - [Scripts](#scripts)
-- [Dependencies](#dependencies)
-- [Development Dependencies](#development-dependencies)
+- [Dependencias](#dependencias)
+- [Dependencias de Desarrollo](#dependencias-de-desarrollo)
 
-## Installation
+## Instalación
 
-To install the necessary dependencies, run:
+Para instalar las dependencias necesarias, ejecuta:
 
 ```bash
 npm install
 ```
 
-## Usage
+## Uso
 
-To start the development server, run:
+Para iniciar el servidor de desarrollo, ejecuta:
 
 ```bash
 npm start
 ```
 
-The application will be available at `http://localhost:4200/`.
+La aplicación estará disponible en `http://localhost:4200/`.
 
-## Components
+## Componentes
 
 ### CountdownComponent
 
-The `CountdownComponent` is responsible for managing a countdown timer.
+El `CountdownComponent` es responsable de gestionar un temporizador de cuenta regresiva.
 
-**Properties:**
+**Propiedades:**
 
-- `@Input() init: number`: The initial countdown value.
-- `@Output() onDecrease: EventEmitter<number>`: Emits the current countdown value on each tick.
-- `@Output() onComplete: EventEmitter<void>`: Emits when the countdown reaches zero.
+- `@Input() init: number`: El valor inicial de la cuenta regresiva.
+- `@Output() onDecrease: EventEmitter<number>`: Emite el valor actual de la cuenta regresiva en cada tick.
+- `@Output() onComplete: EventEmitter<void>`: Emite cuando la cuenta regresiva llega a cero.
 
-**Template:**
+**Plantilla:**
 
 ```html
 <div>
@@ -62,33 +61,33 @@ The `CountdownComponent` is responsible for managing a countdown timer.
 </div>
 ```
 
-**Styles:**
+**Estilos:**
 
-Add styles in `countdown.component.scss`.
+Agrega estilos en `countdown.component.scss`.
 
 ### ProgressBarComponent
 
-The `ProgressBarComponent` displays the progress of the countdown as a percentage.
+El `ProgressBarComponent` muestra el progreso de la cuenta regresiva como un porcentaje.
 
-**Properties:**
+**Propiedades:**
 
-- `@Input() progress: number`: The progress percentage to be displayed.
+- `@Input() progress: number`: El porcentaje de progreso a mostrar.
 
-**Template:**
+**Plantilla:**
 
 ```html
 <div [style.width.%]="progress"></div>
 ```
 
-**Styles:**
+**Estilos:**
 
-Add styles in `progress-bar.component.scss`.
+Agrega estilos en `progress-bar.component.scss`.
 
-## Main Application
+## Aplicación Principal
 
-The main application integrates the `CountdownComponent` and `ProgressBarComponent`.
+La aplicación principal integra el `CountdownComponent` y el `ProgressBarComponent`.
 
-**Template:**
+**Plantilla:**
 
 ```html
 <h1>
@@ -106,11 +105,11 @@ The main application integrates the `CountdownComponent` and `ProgressBarCompone
 </h1>
 ```
 
-**Styles:**
+**Estilos:**
 
-Add styles in `app.component.scss`.
+Agrega estilos en `app.component.scss`.
 
-**Component Logic:**
+**Lógica del Componente:**
 
 ```typescript
 import { Component } from '@angular/core';
@@ -144,14 +143,14 @@ export class AppComponent {
 
 ## Scripts
 
-- `ng`: Run Angular CLI commands.
-- `start`: Start the development server.
-- `build`: Build the application.
-- `watch`: Build the application in watch mode.
-- `test`: Run tests.
-- `serve:ssr:components`: Serve the application with server-side rendering.
+- `ng`: Ejecutar comandos de Angular CLI.
+- `start`: Iniciar el servidor de desarrollo.
+- `build`: Construir la aplicación.
+- `watch`: Construir la aplicación en modo de observación.
+- `test`: Ejecutar pruebas.
+- `serve:ssr:components`: Servir la aplicación con renderizado del lado del servidor.
 
-## Dependencies
+## Dependencias
 
 - `@angular/animations`
 - `@angular/common`
@@ -168,7 +167,7 @@ export class AppComponent {
 - `tslib`
 - `zone.js`
 
-## Development Dependencies
+## Dependencias de Desarrollo
 
 - `@angular-devkit/build-angular`
 - `@angular/cli`
@@ -184,6 +183,6 @@ export class AppComponent {
 - `karma-jasmine-html-reporter`
 - `typescript`
 
-## License
+## Licencia
 
-This project is licensed under the MIT License.
+Este proyecto está licenciado bajo la Licencia MIT.

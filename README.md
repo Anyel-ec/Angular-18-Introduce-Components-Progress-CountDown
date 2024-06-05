@@ -10,9 +10,6 @@ This repository contains two Angular standalone components: a countdown timer (`
 ![Alt text](docs/2.PNG) 
 ![Alt text](docs/3.PNG) 
 
-
-
-![Alt text](doc/document.PNG) 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)

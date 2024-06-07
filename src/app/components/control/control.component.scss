@@ -1,0 +1,26 @@
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-buttons button {
+  display: block;
+  height: 40px;
+  width: 150px;
+  margin: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.control-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}

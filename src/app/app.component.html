@@ -5,9 +5,10 @@
     (onDecrease)="updateProgress($event)"
     (onComplete)="countdownFinished()">
   </app-countdown>
+  <app-control></app-control>
   <div class="control-container">
     <label for="totalCountdown">Inicia en:</label>
     <input type="number" id="totalCountdown" maxlength="15" max="300000000" min="0" [(ngModel)]="totalCountdown" />
-    <button (click)="countdown.startCounter(); counterProgress=0" >Reiniciar</button>
+    <button (click)="countdownComponent.startCounter(); counterProgress=0">Reiniciar</button>
   </div>
 </h1>

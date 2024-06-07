@@ -3,64 +3,52 @@ import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChange
 @Component({
   selector: 'app-countdown',
   standalone: true,
-  imports: [],
   templateUrl: './countdown.component.html',
-  styleUrl: './countdown.component.scss'
+  styleUrls: ['./countdown.component.scss']
 })
-
-
 export class CountdownComponent implements OnInit, OnChanges {
+  @Input() init: number = 0;
+  @Output() onDecrease = new EventEmitter<number>();
+  @Output() onComplete = new EventEmitter<void>();
 
-  ngOnChanges(changes: SimpleChanges): void {
-    //console.log('Valor de init cambio a: ', changes['init'].currentValue);
-    this.startCounter();
-  }
+  public counter: number = 0;
+  private countDownTimeRef: any = null;
 
   ngOnInit(): void {
     this.startCounter();
   }
 
-  @Output() onDecrease = new EventEmitter<number>();
-  @Output() onComplete = new EventEmitter<void>();
+  ngOnChanges(changes: SimpleChanges): void {
+    this.startCounter();
+  }
 
-  @Input() init:number = 0;
-  public counter:number = 0;
-
-  private countDownTimeRef:any = null;
-
-
-
-  startCounter(){
-    if (this.init && this.init>0){
-      this.clearTimeOutRef()
+  startCounter() {
+    if (this.init && this.init > 0) {
+      this.clearTimeOutRef();
       this.counter = this.init;
       this.doCountdown();
     }
   }
 
-  doCountdown(){
-    this.countDownTimeRef = setTimeout(()=>{
+  doCountdown() {
+    this.countDownTimeRef = setTimeout(() => {
       this.counter = this.counter - 1;
       this.processCountdown();
-    }, 1000)
+    }, 1000);
   }
 
-  private clearTimeOutRef(){
-    if (this.countDownTimeRef){
+  clearTimeOutRef() {
+    if (this.countDownTimeRef) {
       clearTimeout(this.countDownTimeRef);
       this.countDownTimeRef = null;
     }
   }
 
-  processCountdown(){
+  processCountdown() {
     this.onDecrease.emit(this.counter);
-
-    //console.log("La cuenta va en: ", this.counter);
-    if(this.counter == 0){
+    if (this.counter === 0) {
       this.onComplete.emit();
-      //console.log("La cuenta ha terminado");
-    }
-    else{
+    } else {
       this.doCountdown();
     }
   }

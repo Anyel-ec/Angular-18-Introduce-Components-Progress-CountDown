@@ -8,7 +8,8 @@ import { ControlComponent } from './components/control/control.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProgressBarComponent, CountdownComponent, ControlComponent, FormsModule],
+  imports: [RouterOutlet, ProgressBarComponent, CountdownComponent,
+     ControlComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

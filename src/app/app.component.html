@@ -1,14 +1,31 @@
 <h1>
-  <app-progress-bar [progress]="counterProgress"></app-progress-bar>
+  <app-progress-bar [progress]="counterProgress">
+
+  </app-progress-bar>
+
+
+
   <app-countdown #countdown
     [init]="totalCountdown"
     (onDecrease)="updateProgress($event)"
     (onComplete)="countdownFinished()">
   </app-countdown>
-  <app-control></app-control>
+
+
+
+  <app-control
+    [paused]="isPaused"
+    (resume)="countdown.resume()"
+    (restart)="countdown.restart()">
+  >
+
+  </app-control>
+
   <div class="control-container">
     <label for="totalCountdown">Inicia en:</label>
-    <input type="number" id="totalCountdown" maxlength="15" max="300000000" min="0" [(ngModel)]="totalCountdown" />
-    <button (click)="countdownComponent.startCounter(); counterProgress=0">Reiniciar</button>
+    <input type="number" id="totalCountdown" maxlength="15"
+     max="300000000" min="0" [(ngModel)]="totalCountdown" />
+    <button (click)="countdownComponent.startCounter();
+    counterProgress=0">Reiniciar</button>
   </div>
 </h1>

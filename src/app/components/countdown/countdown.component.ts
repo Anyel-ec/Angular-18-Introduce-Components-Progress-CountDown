@@ -8,10 +8,14 @@ import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChange
 })
 export class CountdownComponent implements OnInit, OnChanges {
   @Input() init: number = 0;
+  public counter: number = 0;
+
+
   @Output() onDecrease = new EventEmitter<number>();
   @Output() onComplete = new EventEmitter<void>();
 
-  public counter: number = 0;
+
+
   private countDownTimeRef: any = null;
 
   ngOnInit(): void {
